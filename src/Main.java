@@ -15,8 +15,7 @@ Main
         
         printf("hello, %s\n",  name);
         
-        /* RUST SYNTAX!!!! RUST BTW ... 
-        ..=      oh my god is that the inclucive range opperator */
+
         cout()
             .out("hello, ")
             .out(name)
