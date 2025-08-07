@@ -1,5 +1,5 @@
 public class 
-bf 
+Bf 
 {
     public static void 
     main(String[] args) 
