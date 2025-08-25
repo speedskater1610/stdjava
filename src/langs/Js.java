@@ -1,11 +1,13 @@
 package langs;
 
 
-import org.graalvm.polyglot.*;
+import org.graalvm.polyglot.*;  // as the interpriter / js engine 
+import java.nio.file.*;         // for file acces to run js file at once
 
 public class 
 Js 
 {
+    // to run a js string through the engine 
     public static void 
     js(String code) 
     {
@@ -23,4 +25,12 @@ Js
             context.eval("js", code);
         }
     }
+    
+    // to run a enitr js file at once
+    public static void 
+    jsFile(String path) throws Exception 
+    {
+        String code = Files.readString(Path.of(path));
+        js(code);
+    }   
 }
