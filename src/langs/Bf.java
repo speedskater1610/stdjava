@@ -13,7 +13,7 @@ Bf
     }
     
     // bf single compute starts fromt he begiing as a clean slate every time
-    public static void 
+    public static int 
     bf_sc (String code) 
     {
         int[] tape = new int[30000];    // please java why are ints a class
@@ -56,6 +56,9 @@ Bf
                         case '.':
                             System.out.print((char) (tape[ptr]));
                             break;
+                            
+                        case '#': // return the current ptr value and end 
+                            return ((int) (tape[ptr]));
                             
                         // take a char in
                         case ',':
@@ -106,5 +109,6 @@ Bf
                             break;
                     }
             }
+        return 0; //defualt return if there is no specified '#' returned value
     }
 }
