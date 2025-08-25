@@ -41,6 +41,6 @@ Main
         """);
 
 
-        jsFile("test_file.js");
+        jsFile("test_files/javaScript.js");
     }
 }
