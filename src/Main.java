@@ -39,5 +39,8 @@ Main
             let y = 76;
             console.log("X: " + x + "\\nY: " + y);
         """);
+
+
+        jsFile("test_file.js");
     }
 }
