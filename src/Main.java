@@ -10,15 +10,34 @@ Main
     public static void 
     main(String[] args)
     {
-        String name = "russel";
+
+        // a random var to be used for the example
+        String name = "bob";
         
-        
+
+        // how the printf function works
         printf("hello, %s\n",  name);
         
 
+        // how to use cout
         cout()
             .out("hello, ")
             .out(name)
             .endl();
+
+
+        // a use of the bf interpriter
+        bf_sc("++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.");
+
+        // use it for math
+        Value result = js("1 + 2");
+        System.out.println("JS result: " + result.asInt()); // prints 3
+
+
+        js("""
+            let x = 6;
+            let y = 76;
+            console.log("X: " + x + "\\nY: " + y);
+        """);
     }
 }
