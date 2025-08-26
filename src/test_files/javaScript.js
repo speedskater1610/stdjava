@@ -1,3 +1,7 @@
-let name = readLine("hello, what is your name? ");
+fucntion Say_hello() {
+    let name = readLine("hello, what is your name? ");
 
-console.log(`Hello, ${name}!`);
+    console.log(`Hello, ${name}!`);
+}
+
+
