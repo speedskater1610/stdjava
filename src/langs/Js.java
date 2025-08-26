@@ -94,23 +94,30 @@ Js
         }
         catch (PolyglotException e) 
             {
-                // js errors
-                System.out.println(RED + "JavaScript Error: " + e.getMessage() + END);
+                if (detailed_errors)
+                    {
+                        // js errors
+                        System.out.println(RED + "JavaScript Error: " + e.getMessage() + END);
                 
-                if (e.isSyntaxError()) 
-                    {
-                        System.out.println(YELLOW + "ERROR - Syntax Error in js code" + END);
+                        if (e.isSyntaxError()) 
+                            {
+                                System.out.println(YELLOW + "ERROR - Syntax Error in js code" + END);
+                            } 
+                        else if (e.isInternalError()) 
+                            {
+                                System.out.println(YELLOW + "ERROR - Internal JS engine error." + END);
+                            } 
+                        else if (e.isGuestException()) 
+                            {
+                                System.out.println(YELLOW + "ERROR - Runtime error in JS: " + e.getMessage() + END);
+                            }
+                
                     } 
-                else if (e.isInternalError()) 
+                else 
                     {
-                        System.out.println(YELLOW + "ERROR - Internal JS engine error." + END);
-                    } 
-                else if (e.isGuestException()) 
-                    {
-                        System.out.println(YELLOW + "ERROR - Runtime error in JS: " + e.getMessage() + END);
+                        System.out.println(RED + "ERROR - js" + END);
                     }
-                
-            } 
+            }
         catch (Exception e) 
             {
                 // all othger java errors like file reading issues
