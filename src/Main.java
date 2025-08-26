@@ -1,7 +1,9 @@
-import static printUtils.C.printf;      
-import static printUtils.Cpp.cout;
-/* this took me like 20 minutes ro figure out that I had to have printUtils/print.java  */
-/* why cant java just use header files... I dont want to have to deal with this. */
+import static printUtils.C.printf;      // why cant java just use header files... I dont want to have to deal with this.
+import static printUtils.Cpp.cout;      // this took me like 20 minutes ro figure out that I had to have printUtils/print.java 
+import static langs.Bf.bf_sc;           //
+// import static langs.bf.bf_sc;        //
+//import static langs.Js.js;            // thank you codeHs
+import static printUtils.Js.console;    //
 
 
 public class 
@@ -42,5 +44,9 @@ Main
 
 
         jsFile("test_files/javaScript.js");
+
+
+
+        console.log("Hello, " + name + "!");
     }
 }
