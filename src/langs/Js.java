@@ -7,13 +7,20 @@ import java.nio.file.*;         // for file acces to run js file at once
 public class 
 Js 
 {
+
+    boolean detailed_errors = true; // if true then detailed errers will be included 
+    boolean colored_errors = true; // to set colors through ansi codes for colored errors
+
+    public static void 
+    set_error(boolean set_detailed_error, boolean set_colored_error) 
+    {
+        if (set_detailed_error)  detailed_errors = true; else detailed_errors  = false; 
+        if (set_colored_error) colored_errors = true; else colored_errors = false; 
+    }
     // to run a js string through the engine 
     public static void 
     js(String code) 
     {
-
-        boolean detailed_errors = true; // if true then detailed errers will be included 
-        boolean colored_errors = true; // to set colors through ansi codes for colored errors
 
         String RED = "";
         String YELLOW = "";
