@@ -8,15 +8,31 @@ public class
 Js 
 {
 
+    // both true by defualt
     boolean detailed_errors = true; // if true then detailed errers will be included 
     boolean colored_errors = true; // to set colors through ansi codes for colored errors
 
+    /*
+    * @breif - sets the variable `detailed_errors` & `colored_errors` to be able to get diffrent errors and formats for those errors
+    * @scope - public static
+    * @param "boolean set_detailed_error" - if this is true then it will set the `detailed_errors` var to true otherwisee set to false
+    * @param "boolean set_colored_error" - if this is true then it will set the `colored_errors` var to true otherwise set to false
+    * @return - void 
+    */
     public static void 
     set_error(boolean set_detailed_error, boolean set_colored_error) 
     {
         if (set_detailed_error)  detailed_errors = true; else detailed_errors  = false; 
         if (set_colored_error) colored_errors = true; else colored_errors = false; 
     }
+
+
+    /*
+    * @breif - a function that  will use the `org.graalvm.polyglot.*` JS engine to interprit js code at runtime
+    * @scope - public static
+    * @param "String code" - A String that is the js code that gets run; 
+    * @return - void, so nothing.
+    */
     // to run a js string through the engine 
     public static void 
     js(String code) 
@@ -125,12 +141,21 @@ Js
             }
         
     }
+
     
+    /*
+    * @breif - runs a enitre js file at once
+    * @param "String path" - the path to thr js file that you want run
+    * @scope - public static
+    * @return - void
+    */
     // to run a enter a js file at once
     public static void 
     jsFile(String path) throws Exception 
     {
         String code = Files.readString(Path.of(path));
         js(code);
-    }   
+    }
+
+    
 }
