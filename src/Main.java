@@ -4,6 +4,8 @@ import static langs.Bf.bf_sc;           //
 // import static langs.bf.bf_sc;        //
 //import static langs.Js.js;            // thank you codeHs
 import static printUtils.Js.console;    //
+import static langs.lisp.lisp           //
+
 
 
 public class 
@@ -48,5 +50,9 @@ Main
 
 
         console.log("Hello, " + name + "!");
+
+
+        // lisp
+        int result = lisp("(+ (* 2 3) (/ 8 (- 5 2)))");
     }
 }
