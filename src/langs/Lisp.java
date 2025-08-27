@@ -8,6 +8,8 @@ import java.util.*;
 public class
 lisp
 {
+    // AST nodes, Lexer, Parser, Eval, Env.
+    
     // ----- AST -----
     interface Node {}
     
@@ -380,28 +382,6 @@ lisp
     }
 
 
-
-    /*
-    * @breif - tries to find the amount of, either a char or a string inside of a a larger string
-    * @param "String what_to_search" - the string or char that we are trying to find the amount of times it aprears
-    * @param "String where_to_search" - the larger string that gets looked at t find the amount of time what_to_search apears
-    * @scope - private static, gets used as a helper inside of the lisp() function. 
-    * @return - a int the count of how many times that `what_to_search` is found
-    */
-    private static int
-    search_for_string_in_string (String what_to_search, String where_to_search)
-    {
-        int count = 0;
-
-        for (int i = where_to_search.length(); i != 0;  --i) 
-            {
-                if (where_to_search[i] == what_to_search) ++count; 
-            }
-        
-        return count;
-    }
-
-
     /*
     * @breif - returns a number based  off off hat ssi calced from a lisp machine
     * @param "String problem"
@@ -419,7 +399,7 @@ lisp
                 
                     
             if (line == null || line.trim().isEmpty())
-                break;
+                return;
     
             try 
                 {
